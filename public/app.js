@@ -20,20 +20,18 @@ class MovieApp {
     }
   }
   getMovies() {
-    fetch(`http://localhost:3000/api/getUser?user=${this.name}`).then(
-      (data) => {
-        data
-          .json()
-          .then((userInfo) => {
-            console.log(userInfo.movies);
-            this.movies = userInfo.movies;
-            this.render();
-          })
-          .catch((error) => {
-            console.log("error: " + error);
-          });
-      }
-    );
+    fetch(`/api/getUser?user=${this.name}`).then((data) => {
+      data
+        .json()
+        .then((userInfo) => {
+          console.log(userInfo.movies);
+          this.movies = userInfo.movies;
+          this.render();
+        })
+        .catch((error) => {
+          console.log("error: " + error);
+        });
+    });
   }
   addMovie(movieName) {
     var myHeaders = new Headers();
@@ -51,7 +49,7 @@ class MovieApp {
       redirect: "follow",
     };
 
-    fetch("http://localhost:3000/api/addMovie", requestOptions)
+    fetch("/api/addMovie", requestOptions)
       .then((response) => response.text())
       .then((result) => console.log(result))
       .catch((error) => console.log("error", error));
