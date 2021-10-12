@@ -4,6 +4,7 @@ const express = require("express");
 const app = express();
 var mongoose = require("mongoose");
 const mongoURL =
+  process.env.MONGODB_URI ||
   "mongodb+srv://izac:izac1122@cluster0.kewyg.mongodb.net/movieList?retryWrites=true&w=majority";
 mongoose.connect(mongoURL, { useNewUrlParser: true, useUnifiedTopology: true });
 const db = mongoose.connection;
