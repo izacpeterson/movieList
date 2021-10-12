@@ -3,10 +3,13 @@
 const express = require("express");
 const app = express();
 var mongoose = require("mongoose");
-const mongoURL =
-  process.env.MONGODB_URI ||
+const URISTR =
   "mongodb+srv://izac:izac1122@cluster0.kewyg.mongodb.net/movieList?retryWrites=true&w=majority";
-mongoose.connect(mongoURL, { useNewUrlParser: true, useUnifiedTopology: true });
+const MONGODB_URI = process.env.MONGODB_URI;
+mongoose.connect(MONGODB_URI, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+});
 const db = mongoose.connection;
 db.on("error", console.error.bind(console, "MongoDB conection error:"));
 app.use(express.json());
