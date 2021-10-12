@@ -1,0 +1,37 @@
+<!-- @format -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      src="https://kit.fontawesome.com/53c6eecb7e.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="./style.css" />
+    <title>Movie List</title>
+  </head>
+  <body>
+    <header>
+      <div class="inputForm">
+        <input type="text" id="username" placeholder="enter name" /><button
+          id="findUser"
+          onclick="app.setUser(document.querySelector('#username').value)"
+        >
+          <i class="far fa-user"></i>
+        </button>
+      </div>
+    </header>
+    <ul id="movieList"></ul>
+    <div class="inputForm" id="newMovie">
+      <input type="text" id="moviename" placeholder="Add Movie" /><button
+        onclick="app.addMovie(document.querySelector('#moviename').value)"
+      >
+        <i class="fas fa-plus"></i>
+      </button>
+    </div>
+  </body>
+  <script src="./app.js"></script>
+</html>

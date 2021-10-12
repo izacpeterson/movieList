@@ -1,0 +1,65 @@
+/** @format */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+html,
+body {
+  /* height: 100%; */
+  font-size: 16px;
+  margin-bottom: 50px;
+}
+body {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+header {
+  padding: 0 20px;
+  background-color: #5b29b8;
+  color: white;
+}
+.inputForm {
+  display: flex;
+}
+.inputForm input[type="text"] {
+  width: 100%;
+  border: none;
+  background-color: #5b29b8;
+  color: white;
+  text-align: center;
+}
+input::placeholder {
+  color: white;
+}
+button {
+  border: none;
+  background-color: #5b29b8;
+  color: white;
+  padding: 10px;
+}
+button,
+input {
+  font-size: 2rem;
+}
+#newMovie {
+  position: fixed;
+  bottom: 0;
+}
+.mvCard {
+  display: flex;
+  margin-bottom: 20px;
+}
+.mvTitle {
+  font-size: 1.5rem;
+}
+li img {
+  width: 100px;
+}
+.mvInfo {
+  display: flex;
+  flex-direction: column;
+}
